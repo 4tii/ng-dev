@@ -1,0 +1,20 @@
+.navbar{
+    background-color: #ccdeff;
+    height: 100px;
+}
+
+.mainrow{
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 100px);
+}
+
+.sidemenu{
+    background-color: #ffedcc;
+    min-width: 20vw;
+}
+
+.home{
+    background-color: lightgray;
+    min-width: calc(100vw - 20vw);
+}
