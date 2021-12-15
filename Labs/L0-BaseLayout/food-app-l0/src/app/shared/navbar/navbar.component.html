@@ -1,3 +1,5 @@
-<div class="menu">
-    <div class="menuItem" *ngFor="let item of navItems" (click)="goTo(item.url)">{{ item.title }}</div>
-</div>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="menuItem" *ngFor="let item of navItems" (click)="goTo(item.url)">{{ item.title }}</div>
+    </mat-toolbar-row>
+</mat-toolbar>

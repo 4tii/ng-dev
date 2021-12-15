@@ -23,7 +23,25 @@ export class FoodContainerComponent implements OnInit {
   }
 
   foodSaved(f: FoodItem){
-    this.food.push(f);
+    if(f.id){
+      this.fs.putFood(f).subscribe(() => {
+        let arr = this.food.find((item) => item.id == f.id);
+        Object.assign(arr, f);
+        this.food = [...this.food];
+      });
+    }else{
+      this.fs.postFood(f).subscribe(() => {
+        this.food.push(f)
+        this.food = [...this.food];
+      });
+    }    
+  }
+
+  deleteFood(f: FoodItem){
+    this.fs.deleteFood(f.id).subscribe(()=>{
+      let arr = this.food.filter((item) => item.id != f.id);
+      this.food = [...arr];
+    })
   }
 
 }
