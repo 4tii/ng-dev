@@ -3,20 +3,28 @@
     <mat-card-title> Edit </mat-card-title>
   </mat-card-header>
   <mat-card-content fxLayout="column" fxLayoutAlign="center start">
+    <form 
+      [formGroup]="foodForm"
+      (ngSubmit)="saveForm(foodForm)"
+    >
     <mat-form-field>
       <input
         matInput
         type="text"
         placeholder="Enter Food name"
-        [(ngModel)]="food.name"
+        formControlName="name"
       />
     </mat-form-field>
+    <mat-error
+      *ngIf="foodForm.controls['name'].touched && foodForm.controls['name'].errors != undefined">
+        Name is required with a length of 3 chars
+    </mat-error>
     <mat-form-field>
       <input
         matInput
         type="number"
         placeholder="Enter Food price"
-        [(ngModel)]="food.price"
+        formControlName="price"
       />
     </mat-form-field>
     <mat-form-field>
@@ -24,12 +32,11 @@
         matInput
         type="number"
         placeholder="Enter Food calories"
-        [(ngModel)]="food.calories"
+        formControlName="calories"
       />
     </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+    </form>
   </mat-card-content>
-  <mat-card-actions align="end">
-    <button mat-raised-button (click)="doSave()" color="primary">Save</button>
-  </mat-card-actions>
 </mat-card>
   

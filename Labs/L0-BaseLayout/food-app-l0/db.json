@@ -11,24 +11,6 @@
       "name": "Curry Wurst",
       "price": 2.7,
       "calories": 730
-    },
-    {
-      "name": "e",
-      "price": 2,
-      "calories": 3,
-      "id": 6
-    },
-    {
-      "name": "Burger",
-      "price": 12,
-      "calories": 123,
-      "id": 7
-    },
-    {
-      "name": "c",
-      "price": 123,
-      "calories": 4,
-      "id": 8
     }
   ]
 }
