@@ -22,6 +22,11 @@
     "markdown": "mock"
   },
   {
+    "url": "httptest",
+    "title": "Http Test",
+    "markdown": "mock"
+  },
+  {
     "url": "simplecomp",
     "title": "Simple Component",
     "markdown": "simplecomp"
@@ -43,11 +48,15 @@
     "sortOrder": 0
   },
   {
+    "url": "harness",
+    "title": "Component Harness"
+  },
+  {
     "url": "integrationtests",
     "title": "Integration Test"
   },
   {
-    "url": "introe2e",
+    "url": "e2e",
     "title": "Intro E2E Tests"
   }
 ]

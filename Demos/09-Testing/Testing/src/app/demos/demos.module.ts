@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { MaterialModule } from '../material.module';
@@ -19,6 +19,10 @@ import { SharedModule } from '../shared/shared.module';
 import { UseMockComponent } from './samples/use-mock/use-mock.component';
 import { ComponentEventsComponent } from './samples/component-events/component-events.component';
 import { ComponentWriteComponent } from './samples/component-write/component-write.component';
+import { MaterialComponent } from './samples/material/material.component';
+import { Introe2eComponent } from './samples/introe2e/introe2e.component';
+import { HttpTestsComponent } from './samples/http-tests/http-tests.component';
+import { FoodHttpComponent } from './samples/http-tests/food-http/food-http.component';
 
 const demoRoutes: Routes = [
   {
@@ -29,11 +33,14 @@ const demoRoutes: Routes = [
       { path: 'unittesting', component: UnitTestingComponent },
       { path: 'testpipe', component: TestPipeComponent },
       { path: 'simpleservice', component: SimpleServiceComponent },
+      { path: 'httptest', component: HttpTestsComponent },
       { path: 'simplecomp', component: FoodComponent },
       { path: 'integrationtests', component: IntegrationTestComponent },
       { path: 'mock', component: UseMockComponent },
       { path: 'component-events', component: ComponentEventsComponent },
       { path: 'component-write', component: ComponentWriteComponent },
+      { path: 'harness', component: MaterialComponent },
+      { path: 'e2e', component: Introe2eComponent },
     ],
   },
 ];
@@ -54,6 +61,10 @@ const demoRoutes: Routes = [
     UseMockComponent,
     ComponentEventsComponent,
     ComponentWriteComponent,
+    MaterialComponent,
+    Introe2eComponent,
+    HttpTestsComponent,
+    FoodHttpComponent,
   ],
   imports: [
     CommonModule,
@@ -61,6 +72,8 @@ const demoRoutes: Routes = [
     RouterModule.forChild(demoRoutes),
     MaterialModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
